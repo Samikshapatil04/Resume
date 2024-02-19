@@ -1,0 +1,35 @@
+.style-1{
+    color:black;
+    text-align:center;
+    font: bold;
+    
+}
+
+.hyperlinktext{
+    font: bold;
+    font-size: medium;
+    text-align: right;
+    color: blue;
+}
+
+.style-2{
+    color: #11009E;
+    text-align: center;
+    font-size: 30px;
+    font: bold;
+    font-weight: 200;
+   
+
+}
+
+.style-3{
+    text-align: center;
+   
+}
+
+.style-4{
+    font-size: 20px;
+    font: bold;
+    color:royalblue;
+
+}
