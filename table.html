@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+        <style>
+            table{
+                border-style: solid;
+                border-width: 6px;
+                height: 30px;
+                text-align: center;
+                width: 800px;
+            }
+            th{
+                background-color:palegreen;
+                font-size: 16px;
+                border-style: solid;
+                border-width: 3px;
+
+            }
+            td{
+                border-style: solid;
+                border-width: 2px;
+                height: 20px;
+                background-color:bisque;
+            }
+            .result{
+                color:darkgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption><H1>My Table</H1>
+            </caption>
+            <thead>
+                <tr>
+                    <th rowspan="2">STUDENT NAME</th>
+                    <th rowspan="2">ROLL NO.</th>
+                    <th colspan="3">MARKS</th>
+                </tr>
+                <tr>
+                    <th>HISTORY</th>
+                    <th>CIVICS</th>
+                    <th>GEOGRAPHY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>KHUSHI</td>
+                    <td>26</td>
+                    <td>567</td>
+                    <td>367</td>
+                    <td>417</td>
+                </tr>
+                <tr>
+                    <td>NIDHI</td>
+                    <td>36</td>
+                    <td>667</td>
+                    <td>521</td>
+                    <td>438</td>
+                </tr>
+                <tr>
+                    <td>RIYA</td>
+                    <td>41</td>
+                    <td>721</td>
+                    <td>576</td>
+                    <td>601</td>
+                    <tr>
+                        <td colspan="2">RESULT</td>
+                        <td class="result">Pass</td>
+                        <td class="result">Pass</td>
+                        <td class="result">Pass</td>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
