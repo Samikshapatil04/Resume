@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        /* main container */
+        .main-container {
+            width: 30vw;
+            height: 88vh;
+            background-color: bisque;
+            margin-top: 50px;
+            margin-left: 250px;
+            border-radius: 14px;
+            border-color: rgb(14, 14, 14);
+            border-style: solid;
+        }
+
+        #display {
+            width: 97.9%;
+            height: 30%;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(16, 16, 16);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: end;
+            font-size: 25px;
+            color:black;
+            background-color: rgb(131, 129, 129);
+            / Add background color with transparency /
+        }
+
+        /* button container */
+        .button-container {
+            width: 97.8%;
+            height: 67%;
+            background-color: rgb(169, 246, 246);
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(18, 18, 18);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* button styling */
+        .button {
+            width: 22%;
+            height: 15%;
+            background-color: burlywood;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 8px;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        .button-color{
+            background-color: rgba(255, 217, 0, 0.619);
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        function showNumber(gift) {
+            var a = 0;
+            var b = 0;
+            a = 22;
+            b = 33;
+            var c = a + b;
+
+            document.getElementById("display").innerHTML = c + " .We Bring a Gift for You " + gift;
+        }
+
+    </script>
+</head>
+
+<body style="background-image: url(calci-four.jpeg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display">
+        </div>
+        <!-- button section -->
+        <div class="button-container">
+            <button class="button button-color">(</button>
+            <button class="button button-color">)</button>
+            <button class="button button-color">%</button>
+            <button class="button" style="background-color: rgb(230, 64, 64);">AC</button>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button button-color">÷</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button button-color">×</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button button-color">-</button>
+            <button class="button" style="background-color:rgb(111, 168, 247);">.</button>
+            <button class="button">0</button>
+            <button class="button" onclick="showNumber('(Scooty)')" style="background-color: rgb(7, 178, 7);">=</button>
+            <button class="button button-color">+</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+function toDisplay(value){
+    document.getElementById("display").value += value;
+}
+
+function calculate(){
+    document.getElementById("display").value = '' ;
+}
