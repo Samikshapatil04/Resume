@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Vowels</title>
+    <style>
+        /* background image */
+        body {
+            height: 80vh;
+            width: 80vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* main box */
+        .main-container {
+            width: 35vw;
+            height: 66vh;
+            margin-top: 90px;
+            margin-left: 450px;
+            border-style: solid;
+            border-color: gray;
+            border-width: 6px;
+            border-radius: 14px;
+        }
+
+        /* top display box */
+        #display {
+            width: 35vw;
+            height: 18vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+            background-color: #419197;
+        }
+
+        /* bottom box */
+        .bottom-container {
+            width: 35vw;
+            height: 48vh;
+            background-color: #FFC374;
+        }
+
+        /* button */
+        .button {
+            width: 44%;
+            height: 14%;
+            background-color: #219F94;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 138px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+
+        /* button hover */
+        .button:hover {
+            background-color: palegreen;
+        }
+
+        /* input box */
+        .container {
+            width: 70%;
+            height: 10%;
+            font-size: 15px;
+            background-color: #D2E0FB;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        // JavaScript function to check the alphabet is vowel
+
+        function checkVowel() {
+            var char = document.getElementById("alphabet").value;
+            var ch = char.toLowerCase();
+            var resultDisplay = document.getElementById("result");
+
+            if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
+                document.getElementById("display").innerHTML = "Given character is a Vowel!";
+                console.log(resultDisplay + "character is a Vowel!");
+            } else {
+                document.getElementById("display").innerHTML = "Given character is a Consonant!";
+                console.log(resultDisplay + "character is a Constant!");
+            }
+        }
+        // clear function
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body style="background-image: url(https://c8.alamy.com/comp/ADCKXF/letters-ADCKXF.jpg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display"></div>
+        <!-- bottom section -->
+        <div class="bottom-container"><br />
+            <!-- input fiels -->
+            <input id="alphabet" type="text" class="container" placeholder="Enter a  Alphabet"></input><br><br>
+            <!-- button section -->
+            <button class="button" onclick="checkVowel()">A Vowel ?</button><br>
+            <button class="button" onclick="clearFunction()">Clear</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        /* main box */
+        .main-container {
+            width: 30vw;
+            height: 68vh;
+            background-color: #607274;
+            margin-top: 50px;
+            margin-left: 500px;
+            border-radius: 14px;
+            border-color: #607274;
+            border-style: solid;
+            border-width: 12px;
+            box-shadow: wheat;
+        }
+
+        /* top display box */
+        #display {
+            width: 97.9%;
+            height: 26%;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(16, 16, 16);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+            background-color: #B0A4A4;
+        }
+
+        /* bottom input box */
+        .bottom-container {
+            width: 97.8%;
+            height: 67%;
+            background-color: #7D7C7C;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(18, 18, 18);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        /* background styling */
+        body {
+            width: 100vw;
+            height: 90vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* button styling */
+        .button {
+            width: 44%;
+            height: 14%;
+            background-color: palegreen;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 118px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+
+        .button:hover {
+            background-color: #219F94;
+        }
+
+        /* input field container */
+        .container {
+            width: 70%;
+            height: 10%;
+            font-size: 15px;
+            background-color: #EFB495;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        function evenOdd() {
+            // input
+            let number = document.getElementById("number-one").value;
+            // process
+            if (number % 2 === 0) {
+                // output
+                document.getElementById("display").innerHTML = "Number is Even";
+                console.log(number + " is an Even Number");
+            }
+            else {
+                document.getElementById("display").innerHTML = "Number is Odd";
+                console.log(number + " is an Odd Number");
+            }
+        }
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://st4.depositphotos.com/1144687/20504/i/450/depositphotos_205044366-stock-photo-minimalistic-studio-empty-brick-wall.jpg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display"></div>
+        <!-- bottom section -->
+        <div class="bottom-container"><br><br>
+            <!-- input fiels -->
+            <input id="number-one" type="number" class="container" placeholder="0"></input><br><br>
+            <!-- button section -->
+            <button class="button" onclick="evenOdd()">SUBMIT</button><br>
+            <button class="button" onclick="clearFunction()">AC</button>
+        </div>
+    </div>
+</body>
+
+</html>

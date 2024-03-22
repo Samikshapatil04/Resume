@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Voting Card</title>
+    <style>
+        /* background image styling */
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* main body */
+        .main-container {
+            width: 35vw;
+            height: 66vh;
+            margin-top: 70px;
+            margin-left: 150px;
+            border-style: solid;
+        }
+
+        /* top box */
+        #display {
+            width: 35vw;
+            height: 18vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+            background-color: #344955;
+        }
+
+        /* bottom box */
+        .bottom-container {
+            width: 35vw;
+            height: 48vh;
+            background-color: #7D7C7C;
+        }
+
+        /* button styling */
+        .button {
+            width: 44%;
+            height: 14%;
+            background-color: palegreen;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 138px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+
+        .button:hover {
+            background-color: #219F94;
+        }
+
+        /* input field */
+        .container {
+            width: 70%;
+            height: 10%;
+            font-size: 15px;
+            background-color: #EFB495;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        function evenOdd() {
+            // input
+            let age = document.getElementById("number-one").value;
+            // process
+            if (age >= 18) {
+                // output
+                document.getElementById("display").innerHTML = "You are Eligible to Vote!";
+                console.log(age + " Eligible to Vote");
+            }
+            else {
+                document.getElementById("display").innerHTML = "You are Not Eligible to Vote!";
+                console.log(age + " Not Eligible to Vote");
+            }
+        }
+        // clear function
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://www.shutterstock.com/image-vector/vote-voting-election-concept-on-260nw-2196016981.jpg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display"></div>
+        <!-- bottom section -->
+        <div class="bottom-container">
+            <!-- input fiels -->
+            <input id="number-one" type="number" class="container" placeholder="Enter Your Age"></input><br><br>
+            <!-- button section -->
+            <button class="button" onclick="evenOdd()">Check Here</button><br>
+            <button class="button" onclick="clearFunction()">AC</button>
+        </div>
+    </div>
+</body>
+
+</html>
