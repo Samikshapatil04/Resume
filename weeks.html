@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Days of Week</title>
+    <style>
+        /* background image styling */
+        body {
+            height: 75vh;
+            width: 75vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* main body */
+        .main-container {
+            width: 30vw;
+            height: 60vh;
+            margin-top: 70px;
+            margin-left: 100px;
+            border-style: solid;
+            border-color: #F76E11;
+            border-width: 8px;
+        }
+
+        /* top box */
+        #display {
+            width: 30vw;
+            height: 16vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+            background-color: #F1EB90;
+        }
+
+        /* bottom box */
+        .bottom-container {
+            width: 30vw;
+            height: 44vh;
+            background-color: #F3B664;
+        }
+
+        /* button styling */
+        .button {
+            width: 16vw;
+            height: 6vh;
+            background-color: #219F94;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 105px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+
+        .button:hover {
+            background-color: #219F94;
+        }
+
+        /* input field */
+        .container {
+            width: 20vw;
+            height: 5vh;
+            font-size: 15px;
+            background-color: #f6f1ee;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        function days() {
+            // input
+            let number = parseInt(document.getElementById('number').value);;
+            let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            let selectedDay = days[number - 1];
+            // process
+            if (selectedDay) {
+                document.getElementById('display').innerText = 'Day is : ' + selectedDay;
+            } else {
+                document.getElementById('display').innerText = 'Please enter a number between 1 and 7.';
+            }
+        }
+        // clear function
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://www.calendarlabs.com/wallpaper/monthly-wallpaper/11-2023/november-2023-wallpaper-calendar-autumn-1280x720.jpg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display"></div>
+        <!-- bottom section -->
+        <div class="bottom-container"><br/>
+            <!-- input fiels -->
+            <input id="number" type="number" class="container" placeholder="Enter a Number!"></input><br><br>
+            <!-- button section -->
+            <button class="button" onclick="days()">Days is ?</button><br>
+            <button class="button" onclick="clearFunction()">Clear</button>
+        </div>
+    </div>
+</body>
+
+</html>
