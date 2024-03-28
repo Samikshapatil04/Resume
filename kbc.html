@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+         /* main-box  */
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /*  start button  */
+        .start-button {
+            height: 65px;
+            width: 170px;
+            background-color: #c7b53c;
+            font-size: 20px;
+            color: white;
+            border-radius: 30%;
+            margin-left: 210px;
+            margin-top: 580px;
+        }
+
+         /* display section  */
+        .display {
+            width: 85vw;
+            height: 30vh;
+            background-color: rgba(3, 3, 147, 0.845);
+            margin-left: 5%;
+            border-radius: 50px;
+            margin-top: 100px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+         /* for display text  */
+        .text-display {
+            font-size: 50px;
+            color: white;
+        }
+
+        /* option button  */
+        .button {
+            height: 70px;
+            width: 400px;
+            border-radius: 250px;
+            margin: 10px;
+            margin-left: 15%;
+            margin-top: 40px;
+            background-color: #0b81b0;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+        }
+
+         /* background image  */
+        body {
+            height: 90vh;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        // question display
+        let questionNumber = 0;
+        let amountWon = 0;
+        function questionOne() {
+            document.getElementById("text-display").innerHTML = "1. Who is the Father of Nation?";
+            document.getElementById("answer-one").innerHTML = "a. Mahatma Gandhi";
+            document.getElementById("answer-two").innerHTML = "b. Dr. Babasaheb Ambedkar";
+            document.getElementById("answer-three").innerHTML = "c. Bhagat singh";
+            document.getElementById("answer-four").innerHTML = "d. Rajguru";
+        }
+        function questionTwo() {
+            document.getElementById("text-display").innerHTML = "2. Who is the Prime Minister of India?";
+            document.getElementById("answer-one").innerHTML = "a. Adityanath Yogi";
+            document.getElementById("answer-two").innerHTML = "b. Arvind Kejriwal";
+            document.getElementById("answer-three").innerHTML = "c. Akanath Shinde";
+            document.getElementById("answer-four").innerHTML = "d. Narendra Modi";
+        }
+
+        function questionThree() {
+            document.getElementById("text-display").innerHTML = "3. Which planet is known as the Red Planet?";
+            document.getElementById("answer-one").innerHTML = "a. Venus";
+            document.getElementById("answer-two").innerHTML = " b. Mars";
+            document.getElementById("answer-three").innerHTML = "c. Jupiter";
+            document.getElementById("answer-four").innerHTML = "d. Saturn";
+        }
+
+        function questionFour() {
+            document.getElementById("text-display").innerHTML = "4.  In which year did India gain independence from British rule?";
+            document.getElementById("answer-one").innerHTML = "a. 1945";
+            document.getElementById("answer-two").innerHTML = "b. 1947";
+            document.getElementById("answer-three").innerHTML = "c. 1950";
+            document.getElementById("answer-four").innerHTML = "d. 1962";
+        }
+
+        function questionFive() {
+            document.getElementById("text-display").innerHTML = "5. Which country is known as the Land of the Rising Sun?";
+            document.getElementById("answer-one").innerHTML = "a. China";
+            document.getElementById("answer-two").innerHTML = "b. South Korea";
+            document.getElementById("answer-three").innerHTML = "c. Japan";
+            document.getElementById("answer-four").innerHTML = "d. Thailand";
+        }
+
+        function questionSix() {
+            document.getElementById("text-display").innerHTML = "6. Who is the author of the famous novel 'To Kill a Mockingbird'?";
+            document.getElementById("answer-one").innerHTML = "a. Ernest Hemingway";
+            document.getElementById("answer-two").innerHTML = "b. J.K. Rowling";
+            document.getElementById("answer-three").innerHTML = "c. Mark Twain";
+            document.getElementById("answer-four").innerHTML = "d. Harper Lee";
+        }
+
+        function questionSeven() {
+            document.getElementById("text-display").innerHTML = "7. What is the chemical symbol for the element gold?";
+            document.getElementById("answer-one").innerHTML = "a. Au";
+            document.getElementById("answer-two").innerHTML = "b. Ag";
+            document.getElementById("answer-three").innerHTML = "c. Fe";
+            document.getElementById("answer-four").innerHTML = "d. Hg";
+        }
+
+        function questionEight() {
+            document.getElementById("text-display").innerHTML = "8. What is the capital city of Australia?";
+            document.getElementById("answer-one").innerHTML = "a. Melbourne";
+            document.getElementById("answer-two").innerHTML = "b. Sydney";
+            document.getElementById("answer-three").innerHTML = "c. Canberra";
+            document.getElementById("answer-four").innerHTML = "d. Brisbane";
+        }
+
+        function questionNine() {
+            document.getElementById("text-display").innerHTML = "9. Who painted the famous Mona Lisa?";
+            document.getElementById("answer-one").innerHTML = "a. Michelangelo";
+            document.getElementById("answer-two").innerHTML = "b. Leonardo da Vinci";
+            document.getElementById("answer-three").innerHTML = "c. Pablo Picasso";
+            document.getElementById("answer-four").innerHTML = "d. Vincent van Gogh";
+        }
+
+        function questionTen() {
+            document.getElementById("text-display").innerHTML = "10. Who is known as the Father of Computers?";
+            document.getElementById("answer-one").innerHTML = "a. Alan Turing";
+            document.getElementById("answer-two").innerHTML = "b. Charles Babbage";
+            document.getElementById("answer-three").innerHTML = "c. Steve Jobs";
+            document.getElementById("answer-four").innerHTML = "d. Bill Gates";
+        }
+
+        function questionEleven() {
+            document.getElementById("text-display").innerHTML = "11. Which is the smallest continent by land area?";
+            document.getElementById("answer-one").innerHTML = "a. Asia";
+            document.getElementById("answer-two").innerHTML = "b. Africa";
+            document.getElementById("answer-three").innerHTML = "c. Europe";
+            document.getElementById("answer-four").innerHTML = "d. Australia";
+        }
+
+        function questionTwelve() {
+            document.getElementById("text-display").innerHTML = "12. What is the capital of Mongolia?";
+            document.getElementById("answer-one").innerHTML = "a. Ulaanbaatar";
+            document.getElementById("answer-two").innerHTML = "b. Astana";
+            document.getElementById("answer-three").innerHTML = "c. Kathmandu";
+            document.getElementById("answer-four").innerHTML = "d. Bishkek";
+        }
+
+        function questionThirteen() {
+            document.getElementById("text-display").innerHTML = "13. Who composed the famous piece 'Symphony No. 9 in D minor, Op. 125'?";
+            document.getElementById("answer-one").innerHTML = "a. Wolfgang Amadeus Mozart";
+            document.getElementById("answer-two").innerHTML = "b. Ludwig van Beethoven";
+            document.getElementById("answer-three").innerHTML = "c. Johann Sebastian Bach";
+            document.getElementById("answer-four").innerHTML = "d. Franz Schubert";
+        }
+
+        function questionFourteen() {
+            document.getElementById("text-display").innerHTML = "14. In which year did the Chernobyl nuclear disaster occur?";
+            document.getElementById("answer-one").innerHTML = "a. 1976";
+            document.getElementById("answer-two").innerHTML = "b. 1986";
+            document.getElementById("answer-three").innerHTML = "c. 1996";
+            document.getElementById("answer-four").innerHTML = "d. 2006";
+        }
+
+        function questionFifteen() {
+            document.getElementById("text-display").innerHTML = "15. Who developed the theory of relativity?";
+            document.getElementById("answer-one").innerHTML = "a. Isaac Newton";
+            document.getElementById("answer-two").innerHTML = "b. Albert Einstein";
+            document.getElementById("answer-three").innerHTML = "c. Galileo Galilei";
+            document.getElementById("answer-four").innerHTML = "d. Nicolaus Copernicus";
+        }
+
+        function questionSixteen() {
+            document.getElementById("text-display").innerHTML = "16.  Which physicist proposed the Wheeler–DeWitt equation, attempting to unify quantum mechanics and general relativity?";
+            document.getElementById("answer-one").innerHTML = "a. Max Planck";
+            document.getElementById("answer-two").innerHTML = "b. Werner Heisenberg";
+            document.getElementById("answer-three").innerHTML = "c. Richard Feynman";
+            document.getElementById("answer-four").innerHTML = "d. Bryce DeWitt";
+        }
+
+        // questions
+        function question(question) {
+            if (question == 1) {
+                questionNumber = 1;
+                questionOne();
+            } else if (question == 2) {
+                questionNumber = 2;
+                questionTwo();
+            } else if (question == 3) {
+                questionNumber = 3;
+                questionThree();
+            } else if (question == 4) {
+                questionNumber = 4;
+                questionFour();
+            } else if (question == 5) {
+                questionNumber = 5;
+                questionFive();
+            } else if (question == 6) {
+                questionNumber = 6;
+                questionSix();
+            } else if (question == 7) {
+                questionNumber = 7;
+                questionSeven();
+            } else if (question == 8) {
+                questionNumber = 8;
+                questionEight();
+            } else if (question == 9) {
+                questionNumber = 9;
+                questionNine();
+            } else if (question == 10) {
+                questionNumber = 10;
+                questionTen();
+            } else if (question == 11) {
+                questionNumber = 11;
+                questionEleven();
+            } else if (question == 12) {
+                questionNumber = 12;
+                questionTwelve();
+            } else if (question == 13) {
+                questionNumber = 13;
+                questionThirteen();
+            } else if (question == 14) {
+                questionNumber = 14;
+                questionFourteen();
+            } else if (question == 15) {
+                questionNumber = 15;
+                questionFifteen();
+            } else if (question == 16) {
+                questionNumber = 16;
+                questionFifteen();
+            } else {
+                document.getElementById("text-display").innerHTML =
+                    "Congratulations! You have won a total of 7 crore rupees...!";
+            }
+        }
+
+
+        // correct answer finder
+        function answer(givenAnswer) {
+            if (questionNumber == 1) {
+                if (givenAnswer == 1) {
+                    amountWon = 1000;
+                    answerOne(true, 2);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 2) {
+                if (givenAnswer == 4) {
+                    amountWon = 2000;
+                    answerOne(true, 3);
+                } else {
+                    answerOne(false, 0);
+                } o
+            } else if (questionNumber == 3) {
+                if (givenAnswer == 2) {
+                    amountWon = 3000;
+                    answerOne(true, 4);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 4) {
+                if (givenAnswer == 2) {
+                    amountWon = 5000;
+                    answerOne(true, 5);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 5) {
+                if (givenAnswer == 3) {
+                    amountWon = 10000;
+                    answerOne(true, 6);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 6) {
+                if (givenAnswer == 4) {
+                    amountWon = 20000;
+                    answerOne(true, 7);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 7) {
+                if (givenAnswer == 1) {
+                    amountWon = 40000;
+                    answerOne(true, 8);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 8) {
+                if (givenAnswer == 3) {
+                    amountWon = 60000;
+                    answerOne(true, 9);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 9) {
+                if (givenAnswer == 4) {
+                    amountWon = 160000;
+                    answerOne(true, 10);
+                } else {
+                    answerOne(false, 0);
+                } o
+            } else if (questionNumber == 10) {
+                if (givenAnswer == 2) {
+                    amountWon =  320000;
+                    answerOne(true, 11);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 11) {
+                if (givenAnswer == 4) {
+                    amountWon =  640000;
+                    answerOne(true, 12);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 12) {
+                if (givenAnswer == 1) {
+                    amountWon =  1250000;
+                    answerOne(true, 13);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 13) {
+                if (givenAnswer == 2) {
+                    amountWon =  2500000;
+                    answerOne(true, 14);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 14) {
+                if (givenAnswer == 2) {
+                    amountWon =   5000000;
+                    answerOne(true, 15);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 15) {
+                if (givenAnswer == 2) {
+                    amountWon =  10000000;
+                    answerOne(true, 16);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 16) {
+                if (givenAnswer == 4) {
+                    amountWon = 70000000;
+                    answerOne(true, 17);
+                } else {
+                    answerOne(false, 0);
+                }
+            }
+        }
+        // for winner
+        function answerOne(correctAnswer, nextQuestion) {
+            if (correctAnswer) {
+                document.getElementById("text-display").innerHTML =
+                    "Bilkul Sahi jawab !</br>You won ₹" + amountWon + "!"; // Display amount won
+                document.getElementById("container").style.backgroundColor =
+                    "#00BD56";
+                setTimeout(() => {
+                    document.getElementById("container").style.backgroundColor = "darkblue";
+                    question(nextQuestion);
+                }, 2500);
+            } else {
+                document.getElementById("text-display").innerHTML =
+                    "गलत जवाब !</br> Better luck next time!";
+                document.getElementById("container").style.backgroundColor =
+                    "red";
+                setTimeout(() => {
+                    document.getElementById("container").style.backgroundColor = "darkblue";
+                    startScreen();
+                }, 2000);
+            }
+        }
+
+
+        // start kbc game
+        function dostart() {
+            document.getElementById("main-body").hidden = false;
+            document.getElementById("play-button").hidden = true;
+            question(1);
+        }
+
+        function startScreen() {
+            document.getElementById("main-body").hidden = true;
+            document.getElementById("play-button").hidden = false;
+
+        }
+
+        // 
+    </script>
+</head>
+
+<body
+    style="background-image:url(https://assets.telegraphindia.com/telegraph/2023/Jul/1690179957_kaun-banega-crorepati-ab-1.jpeg);">
+    <!-- start button -->
+    <button class="start-button" id="play-button" onclick="dostart()">LET'S START</button>
+    <!-- display -->
+    <div class="main-container" id="main-body" hidden="true">
+        <div class="display" id="container">
+            <h1 id="text-display" class="text-display"></h1>
+        </div>
+        <!-- buttons -->
+        <button class="button" id="answer-one" onclick="answer(1)"></button>
+        <button class="button" id="answer-two" onclick="answer(2)"></button>
+        <button class="button" id="answer-three" onclick="answer(3)"></button>
+        <button class="button" id="answer-four" onclick="answer(4)"></button>
+    </div>
+
+</body>
+
+</html>
