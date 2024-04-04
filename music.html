@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        /* body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        /* main container */
+        .main-box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: khaki;
+        }
+        /* top box */
+        .top-one {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 16vh;
+            background-color: rgba(96, 97, 102, 0.637);
+            font-size: 40px;
+            color: white;
+            box-shadow: 0px 0px 31px rgb(233, 170, 170);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* background video */
+        #background-video {
+            width: 70vw;
+            height: 84vh;
+            object-fit: cover;
+            position: absolute;
+            top: 16vh;
+            left: 0;
+        }
+        /* right box */
+        .right-box {
+            width: 30vw;
+            height: 84vh;
+            background-color: rgb(140, 207, 233);
+            position: absolute;
+            top: 16vh;
+            right: 0;
+            box-shadow: 0px 0px 31px rgb(246, 241, 241);
+        }
+        /* for moving words */
+        .moving-words {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap; /* Prevent words from wrapping */
+            animation: moveWords 5s linear infinite; /* Animation properties */
+            display: inline-block; /* Make text inline so it moves horizontally */
+            font-size: 32px;
+            margin-top: 80px;
+        }
+
+        @keyframes moveWords {
+            from { transform: translateX(0); } /* Start position */
+            to { transform: translateX(100%); } /* End position */
+        }
+        /* for styling button */
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            margin-left: 150px;
+            font-size: 30px;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <div class="top-one">
+            <h1>|| SATYANAM ||</h1>
+        </div>
+        <!-- video section -->
+        <video id="background-video" autoplay loop muted poster="satyanam.jpg">
+            <source src="./audios/satyanam.mp4" type="video/mp4">
+        </video>
+        <!-- right box -->
+        <div class="right-box">
+            <p class="moving-text moving-words">Click Here to Play Songs/Bhajans...</p>
+            <button class="button"><a href="music_page.html">Click Here</a></button>
+            <!-- audio section -->
+            <audio id="audio" controls style="margin-left:70px ; margin-top: 260px; width: 300px;height: 30px;">
+                <source src="./audios/satyanam.mp4" type="audio/mpeg">
+        </div>
+    </div>
+</body>
+</html>
