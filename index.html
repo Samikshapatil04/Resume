@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +8,16 @@
         href="https://static-00.iconduck.com/assets.00/adobe-portfolio-icon-512x512-u7tieq4v.png" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-</head>
+<!-- styling section -->
 <style>
+    /* body styling */
     body {
         margin: 0;
         padding: 0;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         overflow-x: hidden;
     }
-
+    /* video container */
     .video-container {
         position: fixed;
         top: 0;
@@ -28,7 +27,7 @@
         overflow: hidden;
         z-index: -1;
     }
-
+    /* background video styling */
     #backgroundVideo {
         position: absolute;
         top: 50%;
@@ -38,7 +37,7 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
     }
-
+    /* header section */
     header {
         background-color: rgba(51, 51, 51, 0.8);
         color: white;
@@ -48,13 +47,14 @@
         width: 100%;
         z-index: 1;
     }
-
+    /* navbar styling */
     .navbar {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
         justify-content: flex-end;
+        font-size: 28px;
     }
 
     .nav-list {
@@ -68,7 +68,7 @@
         transition: color 0.3s;
     }
 
-
+    /* hover effects */
     .navv:hover {
         color: #d83434;
     }
@@ -82,7 +82,7 @@
         z-index: 1;
         padding-top: 70px;
     }
-
+    /* main container(portfolio section) */
     .hero {
         display: flex;
         flex-direction: column;
@@ -102,14 +102,14 @@
         margin-bottom: 20px;
         border: 3px solid white;
     }
-
+    /* parallax effect */
     .parallax {
-        background: url('your-parallax-image.jpg') no-repeat fixed;
+        background: url('https://static.vecteezy.com/system/resources/thumbnails/039/916/781/original/business-corporate-abstract-animation-digital-technology-background-for-clean-gray-white-presentation-particles-and-network-connections-of-digital-data-data-analysis-technology-seamless-loop-video.jpg') no-repeat fixed;
         background-size: cover;
         padding: 5rem 1rem;
         color: white;
     }
-
+    /* projects section */
     .projects {
         display: flex;
         flex-wrap: wrap;
@@ -136,7 +136,7 @@
         transform: scale(1.05);
     }
 
-
+    /* contact details section */
     .contact-section {
         padding: 50px 0;
         text-align: left;
@@ -149,13 +149,13 @@
     }
 
     .contact-info {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .contact-item {
         margin-bottom: 20px;
     }
-
+    /* footer section */
     footer {
         background-color: rgba(51, 51, 51, 0.8);
         color: white;
@@ -164,23 +164,24 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-    }
-
-    .font {
-        font-size: 60px;
-    }
-
-    .about {
         font-size: 20px;
+    }
+    /* name font styling */
+    .font {
+        font-size: 75px;
+    }
+    /* about section */
+    .about {
+        font-size: 30px;
         color: rgb(7, 7, 52);
     }
-
+    /* button styling */
     .button {
         display: inline-block;
         padding: 12px 28px;
         background-color: #4d9cf0;
         color: #fff;
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 600;
         text-decoration: none;
         border-radius: 5px;
@@ -189,6 +190,14 @@
 
     .button:hover {
         background-color: #0b81fe;
+    }
+    /* header name content styling */
+    .font-one {
+        font-size: 30px;
+    }
+    /* header name styling */
+    .font-two {
+        font-size: 34px;
     }
 
     /* Responsive Design */
@@ -216,7 +225,7 @@
         }
 
         .about {
-            font-size: 15px;
+            font-size: 18px;
         }
 
         footer {
@@ -226,16 +235,38 @@
         .navbar {
             text-align: right;
         }
+
+        .font-one {
+            font-size: 17px;
+        }
+
+        .button {
+            font-size: 1rem;
+        }
+
+        .font-two {
+            font-size: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+        }
+        .navbar {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 18px;
+    }
     }
 </style>
-
+</head>
 <body>
+    <!-- background video -->
     <div class="video-container">
         <video autoplay muted loop id="backgroundVideo">
-            <source src="videos/vid_two.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+            <source src="my_video/vid_two.mp4" type="video/mp4">
         </video>
     </div>
+    <!-- navbar -->
     <header>
         <nav>
             <ul class="navbar">
@@ -246,6 +277,7 @@
             </ul>
         </nav>
     </header>
+    <!-- portfolio section -->
     <div class="content">
         <h1 class="font">Hello,<br />I'm Samiksha Patil !</h1>
         <section id="home" class="hero">
@@ -255,58 +287,68 @@
                 <p>I am a Full Stack Developer.</p>
             </div>
         </section>
-
+        <!-- about me section -->
         <section id="about" class="about parallax">
-            <h2 style="color: rgb(9, 9, 9);">About Me</h2>
+            <h2 style="color: rgb(9, 9, 9);" class="font-two">About Me</h2>
             <p class="about">Hello! I’m a full stack developer with expertise in building in HTML, CSS,
                 JavaScript, and backend technologies.</br> passionate about building interactiveand efficient web
                 applications, I thrive on solving complex problems and </br> continually learning new technologies to
                 enhance user experiences. My focus is on delivering high-quality,</br> scalable, and maintainable code.
             </p>
         </section>
-
+        <!-- projects section -->
         <section id="projects" class="projects">
-            <h2>My Projects</h2>
+            <h2 class="font-two">My Projects</h2>
+            <!-- project one -->
             <div class="project">
-                <h3>HTML-CSS Projects</h3>
+                <h3 class="font-two">HTML-CSS Projects</h3>
                 <a href="project1.html">
                     <img src="images/img_html.jpg" alt="Project 1 Image" class="project-image">
                 </a>
-                <p>Built a comprehensive portfolio website using HTML, CSS, and JavaScript to effectively showcase
+                <p class="font-one">Built a comprehensive portfolio website using HTML, CSS, and JavaScript to
+                    effectively showcase
                     projects and engage visitors. Implemented responsive design, interactive elements, and stylish
                     layouts, demonstrating proficiency in web development and user experience design.</p>
                 <a class="button" href="html_index.html">Click Here</a>
             </div>
+            <!-- project two -->
             <div class="project">
-                <h3>JavaScript</h3>
+                <h3 class="font-two">JavaScript Projects</h3>
                 <a href="project2.html">
                     <img src="images/javas.jpg" alt="Project 2 Image" class="project-image">
                 </a>
-                <p>Created dynamic web applications using JavaScript, enhancing user interaction and functionality.
+                <p class="font-one">Created dynamic web applications using JavaScript, enhancing user interaction and
+                    functionality.
                     Projects include interactive forms, data-driven applications, and animations. Demonstrated
                     proficiency in DOM manipulation, event handling, and integrating APIs for real-time data.</p>
                 <a class="button" href="java_index.html">Click Here</a>
             </div>
         </section>
+        <!-- contact section -->
         <div class="contact-section">
-            <h2 class=>Contact Me</h2><br />
+            <h2 class="font-two">Contact Me</h2><br />
             <div>
+                <!-- skype -->
                 <div class="col-md-6">
                     <div class="contact-item ">
                         <i class="fab fa-skype contact-icon"></i>
                         <span class="contact-info"><a href="https://join.skype.com/invite/vtYkFD0vVf63"
-                            target="_blank">Skype</a></span>
+                                target="_blank">Skype</a></span>
                     </div>
+                    <!-- linkedln -->
                     <div class="contact-item ">
                         <i class="fab fa-linkedin contact-icon"></i>
-                        <span class="contact-info"><a href="https://www.linkedin.com/in/samiksha-p-42ab69243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        <span class="contact-info"><a
+                                href="https://www.linkedin.com/in/samiksha-p-42ab69243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                                 target="_blank">LinkedIn</a></span>
                     </div>
+                    <!-- github -->
                     <div class="contact-item ">
                         <i class="fab fa-github contact-icon"></i>
                         <span class="contact-info"><a href="https://github.com/Samikshapatil04/Resume"
                                 target="_blank">GitHub</a></span>
                     </div>
+                    <!-- contact details -->
                     <div class="contact-item ">
                         <i class="fas fa-phone contact-icon"></i>
                         <span class="contact-info">+91 9322011562</span>
@@ -322,10 +364,11 @@
                 </div>
             </div>
         </div>
-
+        <!-- bootstrap usage code -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- footer -->
         <footer>
             <p>&copy; 2024 Full Stack Developer. All rights reserved.</p>
         </footer>
