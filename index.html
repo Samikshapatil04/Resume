@@ -1,378 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Developer Portfolio</title>
-    <link rel="icon" type="x/icon"
-        href="https://static-00.iconduck.com/assets.00/adobe-portfolio-icon-512x512-u7tieq4v.png" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<!-- styling section -->
-<style>
-    /* body styling */
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        overflow-x: hidden;
-    }
-    /* video container */
-    .video-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -1;
-    }
-    /* background video styling */
-    #backgroundVideo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-    }
-    /* header section */
-    header {
-        background-color: rgba(51, 51, 51, 0.8);
-        color: white;
-        padding: 1rem 0;
-        text-align: right;
-        position: fixed;
-        width: 100%;
-        z-index: 1;
-    }
-    /* navbar styling */
-    .navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: flex-end;
-        font-size: 28px;
-    }
-
-    .nav-list {
-        margin: 0 1rem;
-    }
-
-    .navv {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    /* hover effects */
-    .navv:hover {
-        color: #d83434;
-    }
-
-    .nav-list:hover .navv {
-        color: #d83434;
-    }
-
-    .content {
-        position: relative;
-        z-index: 1;
-        padding-top: 70px;
-    }
-    /* main container(portfolio section) */
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-        color: rgb(10, 10, 10);
-        padding: 40px 10% 0;
-        font-size: 30px;
-    }
-
-    .profile-pic {
-        width: 270px;
-        height: 300px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        border: 3px solid white;
-    }
-    /* parallax effect */
-    .parallax {
-        background: url('https://static.vecteezy.com/system/resources/thumbnails/039/916/781/original/business-corporate-abstract-animation-digital-technology-background-for-clean-gray-white-presentation-particles-and-network-connections-of-digital-data-data-analysis-technology-seamless-loop-video.jpg') no-repeat fixed;
-        background-size: cover;
-        padding: 5rem 1rem;
-        color: white;
-    }
-    /* projects section */
-    .projects {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 2rem 1rem;
-    }
-
-    .project {
-        border: 1px solid #ddd;
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 8px;
-        width: 45%;
-        transition: transform 0.3s;
-    }
-
-    .project-image {
-        width: 50%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .project:hover {
-        transform: scale(1.05);
-    }
-
-    /* contact details section */
-    .contact-section {
-        padding: 50px 0;
-        text-align: left;
-    }
-
-    .contact-icon {
-        font-size: 30px;
-        margin-right: 10px;
-        color: #007bff;
-    }
-
-    .contact-info {
-        font-size: 26px;
-    }
-
-    .contact-item {
-        margin-bottom: 20px;
-    }
-    /* footer section */
-    footer {
-        background-color: rgba(51, 51, 51, 0.8);
-        color: white;
-        text-align: center;
-        padding: 1rem 0;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        font-size: 20px;
-    }
-    /* name font styling */
-    .font {
-        font-size: 75px;
-    }
-    /* about section */
-    .about {
-        font-size: 30px;
-        color: rgb(7, 7, 52);
-    }
-    /* button styling */
-    .button {
-        display: inline-block;
-        padding: 12px 28px;
-        background-color: #4d9cf0;
-        color: #fff;
-        font-size: 2rem;
-        font-weight: 600;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: #0b81fe;
-    }
-    /* header name content styling */
-    .font-one {
-        font-size: 30px;
-    }
-    /* header name styling */
-    .font-two {
-        font-size: 34px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .projects {
-            flex-direction: column;
-        }
-
-        .project {
-            width: 90%;
-        }
-
-        .font {
-            font-size: 25px;
-        }
-
-        .profile-pic {
-            width: 170px;
-            height: 200px;
-        }
-
-        .about {
-            font-size: 18px;
-        }
-
-        footer {
-            height: 4%;
-        }
-
-        .navbar {
-            text-align: right;
-        }
-
-        .font-one {
-            font-size: 17px;
-        }
-
-        .button {
-            font-size: 1rem;
-        }
-
-        .font-two {
-            font-size: 20px;
-        }
-
-        .contact-info {
-            font-size: 18px;
-        }
-        .navbar {
-        display: flex;
-        justify-content: flex-end;
-        font-size: 18px;
-    }
-    }
-</style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="port.css">
 </head>
+
 <body>
-    <!-- background video -->
-    <div class="video-container">
-        <video autoplay muted loop id="backgroundVideo">
-            <source src="videos/vid_two.mp4" type="video/mp4">
-        </video>
-    </div>
-    <!-- navbar -->
+    <!-- header section -->
     <header>
-        <nav>
-            <ul class="navbar">
-                <li class="nav-list"><a href="#home" class="navv">Home</a></li>
-                <li class="nav-list"><a href="#about" class="navv">About</a></li>
-                <li class="nav-list"><a href="#projects" class="navv">Projects</a></li>
-                <li class="nav-list"><a href="#contact" class="navv">Contact</a></li>
+        <div class="user">
+            <img src="my_images/samiksha.jpg" alt="">
+            <h3 class="name">Samiksha Patil</h3>
+            <p class="post">Full Stack Developer</p>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <!-- portfolio section -->
-    <div class="content">
-        <h1 class="font">Hello,<br />I'm Samiksha Patil !</h1>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="my_images/samiksha.jpg" alt="Profile Picture" class="profile-pic">
-                <h1>Welcome to My Portfolio</h1>
-                <p>I am a Full Stack Developer.</p>
+    <!-- header sec ends -->
+    <div id="menu" class="fas fa-bars"></div>
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+
+        <h3>HI THERE !</h3>
+        <h1>I'M <span>Samiksha Patil</span></h1>
+        <p>I'm a full stack developer with expertise in building in HTML, CSS, JavaScript, and backend technologies.
+            passionate about building interactiveand efficient web applications, I thrive on solving complex problems
+            and
+            continually learning new technologies to enhance user experiences. My focus is on delivering high-quality,
+            scalable, and maintainable code!</p>
+        <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
+    </section>
+
+    <!-- home section end  -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> me </h1>
+        <div class="row">
+            <div class="info">
+                <h3> <span> name : </span> samiksha patil </h3>
+                <h3> <span> age : </span> 19 </h3>
+                <h3> <span> qualification : </span> B-Tech </h3>
+                <h3> <span> post : </span> front end developer </h3>
+                <h3> <span> language : </span> hindi </h3>
+                <a href="#"><button class="btn">download cv <i class="fas fa-download"></i></button></a>
             </div>
-        </section>
-        <!-- about me section -->
-        <section id="about" class="about parallax">
-            <h2 style="color: rgb(9, 9, 9);" class="font-two">About Me</h2>
-            <p class="about">Hello! I’m a full stack developer with expertise in building in HTML, CSS,
-                JavaScript, and backend technologies.</br> passionate about building interactiveand efficient web
-                applications, I thrive on solving complex problems and </br> continually learning new technologies to
-                enhance user experiences. My focus is on delivering high-quality,</br> scalable, and maintainable code.
-            </p>
-        </section>
-        <!-- projects section -->
-        <section id="projects" class="projects">
-            <h2 class="font-two">My Projects</h2>
-            <!-- project one -->
-            <div class="project">
-                <h3 class="font-two">HTML-CSS Projects</h3>
-                <a href="project1.html">
-                    <img src="images/img_html.jpg" alt="Project 1 Image" class="project-image">
-                </a>
-                <p class="font-one">Built a comprehensive portfolio website using HTML, CSS, and JavaScript to
-                    effectively showcase
-                    projects and engage visitors. Implemented responsive design, interactive elements, and stylish
-                    layouts, demonstrating proficiency in web development and user experience design.</p>
-                <a class="button" href="html_index.html">Click Here</a>
-            </div>
-            <!-- project two -->
-            <div class="project">
-                <h3 class="font-two">JavaScript Projects</h3>
-                <a href="project2.html">
-                    <img src="images/javas.jpg" alt="Project 2 Image" class="project-image">
-                </a>
-                <p class="font-one">Created dynamic web applications using JavaScript, enhancing user interaction and
-                    functionality.
-                    Projects include interactive forms, data-driven applications, and animations. Demonstrated
-                    proficiency in DOM manipulation, event handling, and integrating APIs for real-time data.</p>
-                <a class="button" href="java_index.html">Click Here</a>
-            </div>
-        </section>
-        <!-- contact section -->
-        <div class="contact-section">
-            <h2 class="font-two">Contact Me</h2><br />
-            <div>
-                <!-- skype -->
-                <div class="col-md-6">
-                    <div class="contact-item ">
-                        <i class="fab fa-skype contact-icon"></i>
-                        <span class="contact-info"><a href="https://join.skype.com/invite/vtYkFD0vVf63"
-                                target="_blank">Skype</a></span>
-                    </div>
-                    <!-- linkedln -->
-                    <div class="contact-item ">
-                        <i class="fab fa-linkedin contact-icon"></i>
-                        <span class="contact-info"><a
-                                href="https://www.linkedin.com/in/samiksha-p-42ab69243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                                target="_blank">LinkedIn</a></span>
-                    </div>
-                    <!-- github -->
-                    <div class="contact-item ">
-                        <i class="fab fa-github contact-icon"></i>
-                        <span class="contact-info"><a href="https://github.com/Samikshapatil04/Resume"
-                                target="_blank">GitHub</a></span>
-                    </div>
-                    <!-- contact details -->
-                    <div class="contact-item ">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <span class="contact-info">+91 9322011562</span>
-                    </div>
-                    <div class="contact-item ">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <span class="contact-info">kpriya2415@gmail.com</span>
-                    </div>
-                    <div class="contact-item ">
-                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <span class="contact-info">Katol, Nagpur, Maharashtra-441302</span>
-                    </div>
+
+            <div class="counter">
+                <div class="box">
+                    <span>1+</span>
+                    <h3>years of experience </h3>
+                </div>
+                <div class="box">
+                    <span>15+</span>
+                    <h3>projects completed </h3>
+                </div>
+                <div class="box">
+                    <span>8+</span>
+                    <h3>awards & certificates </h3>
                 </div>
             </div>
         </div>
-        <!-- bootstrap usage code -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- footer -->
-        <footer>
-            <p>&copy; 2024 Full Stack Developer. All rights reserved.</p>
-        </footer>
-    </div>
+    </section>
+
+    <!-- about section ends  -->
+
+    <!-- education sec starts  -->
+    <section class="education" id="education">
+        <h1 class="heading"><span>education</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2020</span>
+                <h3>SSC</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni error incidunt excepturi natus
+                    perspiciatis asperiores fuga assumenda quos dolorem! Blanditiis?</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2022</span>
+                <h3>HSC</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni error incidunt excepturi natus
+                    perspiciatis asperiores fuga assumenda quos dolorem! Blanditiis?</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2026</span>
+                <h3>B-TECH</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni error incidunt excepturi natus
+                    perspiciatis asperiores fuga assumenda quos dolorem! Blanditiis?</p>
+            </div>
+            
+        </div>
+    </section>
+    <!-- education sec ends  -->
+
+    <!-- portfolio section starts  -->
+
+    <section class="portfolio" id="portfolio">
+    <h1 class="heading">my <span>portfolio</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <h3>HTML Projects</h3>
+                <img src="my_images/html_logo.png" alt="HTML">
+            </div>
+            <div class="box">
+                <h3> CSS Projects</h3>
+                <img src="my_images/css.jpg" alt="CSS">
+            </div>
+            <div class="box">
+                <h3>JavaScript Projects</h3>
+                <img src="my_images/java.jpg" alt="JavaScript">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- portfolio sec ends  -->
+
+<!-- contact section starts -->
+    <section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span></h1><br/>
+    <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-item">
+              <i class="fab fa-skype contact-icon"></i>
+              <a href="https://join.skype.com/invite/vtYkFD0vVf63" target="_blank" class="contact-info">Skype</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin contact-icon"></i>
+              <a href="https://www.linkedin.com/in/samiksha-p-42ab69243" target="_blank" class="contact-info">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github contact-icon"></i>
+              <a href="https://github.com/Samikshapatil04/Resume" target="_blank" class="contact-info">GitHub</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone contact-icon"></i>
+              <span class="contact-info">+91 9322011562</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <a href="mailto:kpriya2415@gmail.com" class="contact-info">kpriya2415@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <span class="contact-info">Nagpur, Maharashtra, India - 441105</span>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- contact section ends -->
+
+    <!-- jquery cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file link -->
+    <script src="script.js"></script>
 </body>
 
 </html>
