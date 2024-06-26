@@ -1,117 +1,158 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Vowels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* background image */
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #45B7D1;
+            --background-color: rgba(255, 255, 255, 0.9);
+            --text-color: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            height: 80vh;
-            width: 80vw;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://c8.alamy.com/comp/ADCKXF/letters-ADCKXF.jpg');
             background-repeat: no-repeat;
             background-size: cover;
-        }
-
-        /* main box */
-        .main-container {
-            width: 35vw;
-            height: 66vh;
-            margin-top: 90px;
-            margin-left: 450px;
-            border-style: solid;
-            border-color: gray;
-            border-width: 6px;
-            border-radius: 14px;
-        }
-
-        /* top display box */
-        #display {
-            width: 35vw;
-            height: 18vh;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
-            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-container {
+            background-color: var(--background-color);
+            border-radius: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+
+        #display {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            min-height: 80px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            color: black;
-            background-color: #419197;
         }
 
-        /* bottom box */
         .bottom-container {
-            width: 35vw;
-            height: 48vh;
-            background-color: #FFC374;
+            background-color: var(--secondary-color);
+            padding: 20px;
         }
 
-        /* button */
-        .button {
-            width: 44%;
-            height: 14%;
-            background-color: #219F94;
-            border-radius: 14px;
-            border-style: solid;
-            margin-top: 15px;
-            margin-left: 138px;
-            font-size: 20px;
-            cursor: pointer;
-
-        }
-
-        /* button hover */
-        .button:hover {
-            background-color: palegreen;
-        }
-
-        /* input box */
         .container {
-            width: 70%;
-            height: 10%;
-            font-size: 15px;
-            background-color: #D2E0FB;
-            margin-top: 20px;
-            margin-left: 70px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
         }
-    </style>
-    <!-- javascript -->
-    <script>
-        // JavaScript function to check the alphabet is vowel
 
-        function checkVowel() {
-            var char = document.getElementById("alphabet").value;
-            var ch = char.toLowerCase();
-            var resultDisplay = document.getElementById("result");
+        .button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
 
-            if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
-                document.getElementById("display").innerHTML = "Given character is a Vowel!";
-                console.log(resultDisplay + "character is a Vowel!");
-            } else {
-                document.getElementById("display").innerHTML = "Given character is a Consonant!";
-                console.log(resultDisplay + "character is a Constant!");
+        .button:hover {
+            background-color: #3A9EBA;
+        }
+
+        .button:last-child {
+            background-color: #95A5A6;
+        }
+
+        .button:last-child:hover {
+            background-color: #7F8C8D;
+        }
+
+        @media screen and (min-width: 768px) {
+            .main-container {
+                max-width: 500px;
+            }
+
+            #display {
+                font-size: 1.4rem;
+            }
+
+            .button {
+                font-size: 1.1rem;
             }
         }
-        // clear function
-        function clearFunction() {
-            total = 0;
-            displayString = "";
-            document.getElementById("display").innerHTML = "";
-        }
-    </script>
-</head>
 
-<body style="background-image: url(https://c8.alamy.com/comp/ADCKXF/letters-ADCKXF.jpg);">
-    <!-- main section -->
+        @media screen and (max-width: 480px) {
+            .main-container {
+                width: 95%;
+            }
+
+            #display {
+                font-size: 1rem;
+            }
+
+            .button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <div class="main-container">
-        <!-- display section -->
-        <div id="display"></div>
-        <!-- bottom section -->
-        <div class="bottom-container"><br />
-            <!-- input fiels -->
-            <input id="alphabet" type="text" class="container" placeholder="Enter a  Alphabet"></input><br><br>
-            <!-- button section -->
-            <button class="button" onclick="checkVowel()">A Vowel ?</button><br>
+        <div id="display">Enter an alphabet to check if it's a vowel</div>
+        <div class="bottom-container">
+            <input id="alphabet" type="text" class="container" placeholder="Enter an alphabet" maxlength="1">
+            <button class="button" onclick="checkVowel()">Is it a Vowel?</button>
             <button class="button" onclick="clearFunction()">Clear</button>
         </div>
     </div>
-</body>
 
+    <script>
+        function checkVowel() {
+            var char = document.getElementById("alphabet").value.toLowerCase();
+            if (char.length === 0) {
+                document.getElementById("display").innerHTML = "Please enter an alphabet";
+            } else if (char.length > 1) {
+                document.getElementById("display").innerHTML = "Please enter only one alphabet";
+            } else if ('aeiou'.includes(char)) {
+                document.getElementById("display").innerHTML = "'" + char.toUpperCase() + "' is a Vowel!";
+            } else if (char.match(/[a-z]/i)) {
+                document.getElementById("display").innerHTML = "'" + char.toUpperCase() + "' is a Consonant!";
+            } else {
+                document.getElementById("display").innerHTML = "Please enter a valid alphabet";
+            }
+        }
+
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "Enter an alphabet to check if it's a vowel";
+            document.getElementById("alphabet").value = "";
+        }
+    </script>
+</body>
 </html>
