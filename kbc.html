@@ -20,13 +20,16 @@
             color: white;
             border-radius: 30%;
             margin-left: 210px;
-            margin-top: 720px;
+            margin-top: 600px;
         }
-
+        .start-button:hover {
+            background-color: #e0cd4e;
+            transform: scale(1.05);
+        }
          /* display section  */
         .display {
-            width: 85vw;
-            height: 30vh;
+            width: 80vw;
+            height: 20vh;
             background-color: rgba(3, 3, 147, 0.845);
             margin-left: 5%;
             border-radius: 50px;
@@ -39,7 +42,7 @@
 
          /* for display text  */
         .text-display {
-            font-size: 50px;
+            font-size: 40px;
             color: white;
         }
 
@@ -52,10 +55,14 @@
             margin-left: 15%;
             margin-top: 40px;
             background-color: #0b81b0;
-            font-size: 30px;
+            font-size: 25px;
             color: white;
             font-weight: bold;
 
+        }
+        .button:hover {
+            background-color: #0ca2db;
+            transform: scale(1.05);
         }
 
          /* background image  */
@@ -65,6 +72,52 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+        }
+
+       /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .start-button {
+                height: 50px;
+                width: 140px;
+                font-size: 18px;
+                line-height: 50px;
+            }
+
+            .display {
+                height: 5vh;
+                width: 40vw;
+            }
+
+            .text-display {
+                font-size: 40px;
+            }
+
+            .button {
+                height: 60px;
+                font-size: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .start-button {
+                height: 40px;
+                width: 120px;
+                font-size: 16px;
+                line-height: 40px;
+            }
+
+            .display {
+                height: 10vh;
+            }
+
+            .text-display {
+                font-size: 30px;
+            }
+
+            .button {
+                height: 50px;
+                font-size: 20px;
+            }
         }
     </style>
     <script>
@@ -375,7 +428,7 @@
         function answerOne(correctAnswer, nextQuestion) {
             if (correctAnswer) {
                 document.getElementById("text-display").innerHTML =
-                    "Bilkul Sahi jawab !</br>You won ₹" + amountWon + "!"; // Display amount won
+                    "बिल्कुल सही जवाब !</br>You won ₹" + amountWon + "!"; // Display amount won
                 document.getElementById("container").style.backgroundColor =
                     "#00BD56";
                 setTimeout(() => {
