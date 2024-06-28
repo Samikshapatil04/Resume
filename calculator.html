@@ -1,103 +1,159 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
-        /* main container */
-        .main-container {
-            width: 30vw;
-            height: 88vh;
-            background-color:darkcyan;
-            margin-top: 50px;
-            margin-left: 250px;
-            border-radius: 14px;
-            border-color:darkcyan;
-            border-style: solid;
-            border-width: 12px;
-        }
-
-        #display {
-            width: 97.9%;
-            height: 30%;
-            border-radius: 14px;
-            border-style: double;
-            border-color: rgb(16, 16, 16);
-            margin-top: 2px;
-            margin-bottom: 2px;
-            margin-left: 2px;
-            margin-right: 2px;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: end;
-            font-size: 25px;
-            color:black;
-            background-color:rgb(131, 163, 163);
-            / Add background color with transparency /
-        }
-
-        /* button container */
-        .button-container {
-            width: 97.8%;
-            height: 67%;
-            background-color: rgb(169, 246, 246);
-            border-radius: 14px;
-            border-style: double;
-            border-color: rgb(18, 18, 18);
-            margin-top: 2px;
-            margin-bottom: 2px;
-            margin-left: 2px;
-            margin-right: 2px;
-        }
-
         body {
             width: 100vw;
             height: 100vh;
+            background-image: url('https://img.freepik.com/premium-photo/abstract-background-images-wallpaper-ai-generated_643360-43200.jpg');
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
         }
 
-        /* button styling */
+        .main-container {
+            width: 30vw;
+            height: 88vh;
+            background-color: #1e2a38;
+            margin-top: 50px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        #display {
+            width: 90%;
+            height: 20%;
+            border-radius: 14px;
+            border: none;
+            margin: 2px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: end;
+            font-size: 3vw;
+            color: #fff;
+            background-color: #3a4f63;
+            padding: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-container {
+            width: 90%;
+            height: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+        }
+
         .button {
             width: 22%;
             height: 15%;
-            background-color: burlywood;
+            background-color: #4a90e2;
+            border: none;
             border-radius: 14px;
-            border-style: solid;
-            margin-top: 15px;
-            margin-left: 8px;
-            font-size: 35px;
+            font-size: 2vw;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1%;
+            color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .button:hover{
-            background-color: palegreen;
+
+        .button:hover {
+            background-color: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
-        .button-color{
-            background-color: rgba(255, 217, 0, 0.619);
+
+        .button-color {
+            background-color: #f39c12;
+        }
+
+        .button-special {
+            background-color: #e74c3c;
+        }
+
+        .button-equal {
+            background-color: #27ae60;
+        }
+
+        .button-dot {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                width: 80vw;
+                height: auto;
+            }
+
+            #display {
+                font-size: 6vw;
+                height: 15%;
+            }
+
+            .button {
+                width: 22%;
+                height: 12%;
+                font-size: 4vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                width: 90vw;
+                height: auto;
+            }
+
+            #display {
+                font-size: 8vw;
+                height: 15%;
+            }
+
+            .button {
+                width: 22%;
+                height: 10%;
+                font-size: 5vw;
+            }
         }
     </style>
-    <!-- javascript -->
+    <!-- JavaScript -->
     <script>
-            let total = 0;
+        let total = 0;
         let action = 0;
         let displayString = "";
 
         function numberType(passnumber) {
-            displayString = displayString + passnumber.toString();
+            displayString += passnumber.toString();
             document.getElementById("display").innerHTML = displayString;
         }
+
         function clearFunction() {
             total = 0;
             displayString = "";
             document.getElementById("display").innerHTML = "";
         }
+
         function add() {
             total = Number(displayString);
             displayString = "";
             action = 1;
             document.getElementById("display").innerHTML = displayString;
-
         }
+
         function divi() {
             total = Number(displayString);
             action = 2;
@@ -111,6 +167,7 @@
             displayString = "";
             document.getElementById("display").innerHTML = displayString;
         }
+
         function minus() {
             total = Number(displayString);
             action = 4;
@@ -119,44 +176,35 @@
         }
 
         function backspace() {
-            displayString = displayString.substring(0, displayString.length - 1)
+            displayString = displayString.substring(0, displayString.length - 1);
             document.getElementById("display").innerHTML = displayString;
         }
+
         function showresult() {
             if (action == 1) {
-                total = total + Number(displayString);
+                total += Number(displayString);
+            } else if (action == 2) {
+                total /= Number(displayString);
+            } else if (action == 3) {
+                total *= Number(displayString);
+            } else if (action == 4) {
+                total -= Number(displayString);
             }
-            else if (action == 2) {
-                total = total / Number(displayString);
-            }
-            else if (action == 3) {
-                total = total * Number(displayString);
-            }
-            else if (action == 4) {
-                total = total - Number(displayString);
-            }
-        
+
             displayString = total;
             document.getElementById("display").innerHTML = displayString;
         }
-
-
     </script>
 </head>
-
-<body style="background-image: url(./my_images/calci-four.jpeg);">
-    <!-- main section -->
+<body>
     <div class="main-container">
-        <!-- display section -->
-        <div id="display">
-        </div>
-        <!-- button section -->
+        <div id="display"></div>
         <div class="button-container">
-            <button class="button button-color">(</button>
+            <button class="button button-color" onclick="numberType(0)">00</button>
             <button class="button button-color" onclick="per()">%</button>
-            <button class="button" style="background-color:rgb(246, 43, 84);" onclick="backspace()">DEL</button>
-            <button class="button button-color" style="background-color: red;" onclick="clearFunction()">AC</button>
-           
+            <button class="button button-special" onclick="backspace()">DEL</button>
+            <button class="button button-special" onclick="clearFunction()">AC</button>
+
             <button class="button" onclick="numberType(7)">7</button>
             <button class="button" onclick="numberType(8)">8</button>
             <button class="button" onclick="numberType(9)">9</button>
@@ -169,21 +217,11 @@
             <button class="button" onclick="numberType(2)">2</button>
             <button class="button" onclick="numberType(3)">3</button>
             <button class="button button-color" onclick="minus()">-</button>
-            <button class="button" style="background-color:rgb(111, 168, 247);">.</button>
+            <button class="button button-dot">.</button>
             <button class="button" onclick="numberType(0)">0</button>
-            <button class="button" onclick="showresult()" style="background-color: rgb(7, 178, 7);">=</button>
+            <button class="button button-equal" onclick="showresult()">=</button>
             <button class="button button-color" onclick="add()">+</button>
         </div>
     </div>
 </body>
-
 </html>
-
-<!-- 
-function toDisplay(value){
-    document.getElementById("display").value += value;
-}
-
-function calculate(){
-    document.getElementById("display").value = '' ;
-}
