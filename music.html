@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,99 +8,160 @@
     <style>
         /* body styling */
         body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(https://i.pinimg.com/736x/24/c1/c1/24c1c1f79435837661ccc6133117ea93.jpg);
             margin: 0;
             padding: 0;
-            height: 100%;
-        }
-        /* main container */
-        .main-box {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background-color: khaki;
-        }
-        /* top box */
-        .top-one {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 16vh;
-            background-color: rgba(96, 97, 102, 0.637);
-            font-size: 40px;
-            color: white;
-            box-shadow: 0px 0px 31px rgb(233, 170, 170);
-            text-align: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-        }
-        /* background video */
-        #background-video {
-            width: 70vw;
-            height: 84vh;
-            object-fit: cover;
-            position: absolute;
-            top: 16vh;
-            left: 0;
-        }
-        /* right box */
-        .right-box {
-            width: 30vw;
-            height: 84vh;
-            background-color: rgb(140, 207, 233);
-            position: absolute;
-            top: 16vh;
-            right: 0;
-            box-shadow: 0px 0px 31px rgb(246, 241, 241);
-        }
-        /* for moving words */
-        .moving-words {
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap; /* Prevent words from wrapping */
-            animation: moveWords 5s linear infinite; /* Animation properties */
-            display: inline-block; /* Make text inline so it moves horizontally */
-            font-size: 32px;
-            margin-top: 80px;
+            min-height: 100vh;
         }
 
-        @keyframes moveWords {
-            from { transform: translateX(0); } /* Start position */
-            to { transform: translateX(100%); } /* End position */
+        /* main box */
+        .main-container {
+            text-align: center;
+            height: 45vh;
+            width: 30vw;
+            background-color: rgba(143, 200, 224, 0.849);
+            box-shadow: 0 0 10px rgba(20, 250, 85, 0.751);
+            border: 2px solid rgb(240, 238, 238);
+            border-radius: 15%;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        /* for styling button */
-        .button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            outline: none;
-            margin-left: 150px;
-            font-size: 30px;
-            margin-top: 70px;
+
+        /* button styling */
+        #previous,
+        #playPause,
+        #next {
+            height: 35px;
+            width: 120px;
+            margin-top: 20px;
+            background-color: rgb(255, 222, 181);
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        #previous:hover,
+        #playPause:hover,
+        #next:hover {
+            background-color: #fcc162;
+        }
+
+        #audio {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 40px;
+        }
+
+        .satyanam {
+            color: black;
+            font-size: 4rem;
+            text-align: center;
+            margin: 20px 0; /* Added top margin */
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .main-container {
+                width: 80vw;
+                height: auto;
+                padding: 40px 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-container {
+                width: 90vw;
+                border-radius: 10px;
+            }
+
+            #previous,
+            #playPause,
+            #next {
+                width: 100px;
+                font-size: 14px;
+            }
+
+            .satyanam {
+                font-size: 3rem;
+                /* Smaller font size for mobile */
+            }
         }
     </style>
+    <script>
+        // JavaScript (unchanged)
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio');
+            const playPauseButton = document.getElementById('playPause');
+            const previousButton = document.getElementById('previous');
+            const nextButton = document.getElementById('next');
+            const songs = [
+                './audios/song1.mp3',
+                './audios/song2.mp3',
+                './audios/song3.mp3',
+                './audios/song4.mp3',
+                './audios/song5.mp3',
+                './audios/song6.mp3',
+            ];
+            let currentSongIndex = 0;
+
+            function playPause() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseButton.textContent = 'Pause';
+                } else {
+                    audio.pause();
+                    playPauseButton.textContent = 'Play';
+                }
+            }
+
+            function playNext() {
+                currentSongIndex = (currentSongIndex + 1) % songs.length;
+                audio.src = songs[currentSongIndex];
+                audio.play();
+                playPauseButton.textContent = 'Pause';
+            }
+
+            function playPrevious() {
+                currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                audio.src = songs[currentSongIndex];
+                audio.play();
+                playPauseButton.textContent = 'Pause';
+            }
+
+            playPauseButton.addEventListener('click', playPause);
+            nextButton.addEventListener('click', playNext);
+            previousButton.addEventListener('click', playPrevious);
+        });
+    </script>
 </head>
+
 <body>
-    <div class="main-box">
-        <div class="top-one">
-            <h1>|| SATYANAM ||</h1>
+    <div class="satyanam">
+        <p>|| सत्यनाम ||</p>
+    </div>
+    <div class="main-container">
+        <div>
+            <!-- song -->
+            <audio id="audio" controls>
+                <source src="./audios/song1.mp3" type="audio/mpeg">
+                <source src="./audios/song2.mp3" type="audio/mpeg">
+                <source src="./audios/song3.mp3" type="audio/mpeg">
+                <source src="./audios/song4.mp3" type="audio/mpeg">
+                <source src="./audios/song5.mp3" type="audio/mpeg">
+                <source src="./audios/song6.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        <!-- video section -->
-        <video id="background-video" autoplay loop muted poster="satyanam.jpg">
-            <source src="./audios/satyanam.mp4" type="video/mp4">
-        </video>
-        <!-- right box -->
-        <div class="right-box">
-            <p class="moving-text moving-words">Click Here to Play Songs/Bhajans...</p>
-            <button class="button"><a href="music_page.html">Click Here</a></button>
-            <!-- audio section -->
-            <audio id="audio" controls style="margin-left:70px ; margin-top: 260px; width: 300px;height: 30px;">
-                <source src="./audios/satyanam.mp4" type="audio/mpeg">
+        <div>
+            <!-- control play button -->
+            <br><button id="playPause">Play</button><br>
+            <button id="previous">Previous</button>
+            <button id="next">Next</button><br>
         </div>
     </div>
 </body>
+
 </html>
