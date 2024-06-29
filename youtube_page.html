@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            table{
-                width: 100vw;
-                height: 100vh;
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100vw;
+            height: 100vh;
+        }
+        .mainvideo {
+            background-color: palegoldenrod;
+            width: 70%;
+            height: 100%;
+        }
+        .suggestvideo {
+            width: 30%;
+            height: 33.3%;
+            background-color: palevioletred;
+            border-style: solid;
+            border: 3px;
+        }
+        .name {
+            color: red;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                display: block;
+                height: auto;
             }
-            .mainvideo{
-                background-color: palegoldenrod;
-                width: 70%;
-                height: 100%;
+            .mainvideo, .suggestvideo {
+                display: block;
+                width: 100%;
+                height: auto;
             }
-            .suggestvideo{
-                width: 30%;
-                height: 33.3%;
-                background-color: palevioletred;
-                border-style: solid;
-                border: 3px;
+            .mainvideo {
+                margin-bottom: 10px;
             }
-            .name{
-                color: red;
+            video {
+                max-width: 100%;
+                height: auto;
             }
-        </style>
-    </head>
-    <body style="margin: 0px;">
-        <table>
-            <h2 style="color: green; font-family: cursive;"> Here's the <span class="name"><i>Product Demo Video</i> </span>Series!</h2>
-            <!--1st Row-->
-            <tr>
-                <td class="mainvideo" rowspan="3"> 
-                    <video src="./videos/video-nine.mp4" 
-                    height="100%" 
-                    width="100%" controls></video>
-                </td>
-                <td class="suggestvideo">
-                    <video src="./videos/video_eight.mp4" 
-                    height="100%" 
-                    width="100%" controls></video>
-                </td>
-            </tr>
-            <tr>
-                <td class="suggestvideo">
-                    <video src="./videos/video_five.mp4" 
-                    height="100%" 
-                    width="100%" controls></video>
-                </td>
-            </tr>
-            <tr>
-                <td class="suggestvideo">
-                    <video src="./videos/video_four.mp4" 
-                    height="100%" width="100%" 
-                    controls></video>
-                </td>
-            </tr>
-        </table>
-    </body>
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <table>
+        <h2 style="color: green; font-family: cursive; text-align: center;">
+            Here's the <span class="name"><i>Product Demo Video</i></span>Series!
+        </h2>
+        <!--1st Row-->
+        <tr>
+            <td class="mainvideo" rowspan="3">
+                <video src="./videos/video-nine.mp4" height="100%" width="100%" controls></video>
+            </td>
+            <td class="suggestvideo">
+                <video src="./videos/video_eight.mp4" height="100%" width="100%" controls></video>
+            </td>
+        </tr>
+        <tr>
+            <td class="suggestvideo">
+                <video src="./videos/video_five.mp4" height="100%" width="100%" controls></video>
+            </td>
+        </tr>
+        <tr>
+            <td class="suggestvideo">
+                <video src="./videos/video_four.mp4" height="100%" width="100%" controls></video>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>
