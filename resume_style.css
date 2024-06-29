@@ -1,4 +1,4 @@
-.style-1{
+.style-one{
     color:black;
     text-align:center;
     font: bold;
@@ -12,7 +12,7 @@
     color: blue;
 }
 
-.style-2{
+.style-two{
     color: #11009E;
     text-align: center;
     font-size: 30px;
@@ -22,12 +22,12 @@
 
 }
 
-.style-3{
+.style-three{
     text-align: center;
    
 }
 
-.style-4{
+.style-four{
     font-size: 20px;
     font: bold;
     color:royalblue;
