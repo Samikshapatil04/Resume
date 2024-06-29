@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FF6B6B;
-            --secondary-color: #4ECDC4;
-            --accent-color: #45B7D1;
+            --primary-color: #2E4053; /* Navy Blue */
+            --secondary-color: #F7F7F7; /* Light Gray */
+            --accent-color: #8B9467; /* Dark Green */
             --background-color: rgba(255, 255, 255, 0.9);
             --text-color: #2C3E50;
         }
@@ -22,7 +23,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://img.freepik.com/free-vector/black-abstract-background_1393-348.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719532800&semt=ais_user');
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/939/961/small/blur-circle-bokeh-green-leaf-background-blurry-yellow-leaves-rays-light-flare-nature-backdrop-free-photo.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -34,7 +35,7 @@
             padding: 20px;
         }
 
-        .main-container {
+       .main-container {
             background-color: var(--background-color);
             border-radius: 14px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -42,7 +43,10 @@
             max-width: 400px;
             overflow: hidden;
         }
+        .main-container {
+            box-shadow: 0px 0px 26px rgb(53, 53, 145);
 
+        }
         #display {
             background-color: var(--primary-color);
             color: white;
@@ -55,12 +59,12 @@
             justify-content: center;
         }
 
-        .bottom-container {
+       .bottom-container {
             background-color: var(--secondary-color);
             padding: 20px;
         }
 
-        .container {
+       .container {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -69,10 +73,10 @@
             font-size: 1rem;
         }
 
-        .button {
+       .button {
             width: 100%;
             padding: 12px;
-            background-color: var(--accent-color);
+            background-color:#05a5d1;
             color: white;
             border: none;
             border-radius: 4px;
@@ -82,20 +86,20 @@
             margin-bottom: 10px;
         }
 
-        .button:hover {
-            background-color: #3A9EBA;
+       .button:hover {
+            background-color: #3d8ca2;
         }
 
-        .button:last-child {
+       .button:last-child {
             background-color: #95A5A6;
         }
 
-        .button:last-child:hover {
+       .button:last-child:hover {
             background-color: #7F8C8D;
         }
 
         @media screen and (min-width: 768px) {
-            .main-container {
+           .main-container {
                 max-width: 500px;
             }
 
@@ -103,13 +107,13 @@
                 font-size: 1.4rem;
             }
 
-            .button {
+           .button {
                 font-size: 1.1rem;
             }
         }
 
         @media screen and (max-width: 480px) {
-            .main-container {
+           .main-container {
                 width: 95%;
             }
 
@@ -117,7 +121,7 @@
                 font-size: 1rem;
             }
 
-            .button {
+           .button {
                 font-size: 0.9rem;
             }
         }
