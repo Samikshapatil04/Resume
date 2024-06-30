@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samiksha P. Patil - Resume</title>
+    <style>
+        /* styling sec */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #78787a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* main container */
+        .resume {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgb(235, 230, 230);
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            display: flex;
+        }
+        /* left column */
+        .left-column {
+            background-color: #d1d3d4;
+            padding: 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .left-column img {
+            border-radius: 50%;
+            width: 160px;
+            height: 170px;
+            margin-bottom: 20px;
+        }
+
+        .left-column .personal-info {
+            text-align: left;
+            width: 100%;
+        }
+
+        .left-column .personal-info p {
+            margin: 10px 0;
+        }
+
+        .left-column .personal-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        /* right column */
+        .right-column {
+            padding: 20px;
+            width: 65%;
+        }
+
+        .right-column h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #34495e;
+        }
+
+        .right-column h2 {
+            font-size: 18px;
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .right-column p {
+            margin: 10px 0;
+        }
+
+        .right-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .right-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .right-column ul li::before {
+            content: "•";
+            color: #3498db;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        /* media query */
+        @media (max-width: 768px) {
+            .resume {
+                flex-direction: column;
+            }
+
+            .left-column {
+                width: 100%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .right-column {
+                width: 100%;
+            }
+        }
+        /* media print for print resume */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                display: block;
+            }
+
+            .resume {
+                box-shadow: none;
+                margin: 0;
+                padding: 10mm;
+                max-width: 100%;
+                width: 210mm; 
+                height: 297mm; 
+                display: flex;
+                flex-direction: row;
+            }
+
+            .left-column, .right-column {
+                padding: 5mm;
+            }
+
+            .left-column {
+                width: 35%;
+                background-color: #d1d3d4 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .right-column {
+                width: 65%;
+            }
+
+            .left-column img {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+            ul li {
+                font-size: 17px;
+                line-height: 1.3;
+            }
+            .personal-info p {
+                margin: 6px 0;
+            }
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- main sec -->
+    <div class="resume">
+        <!-- left sec -->
+        <div class="left-column">
+            <img src="images_edit/samiksha.jpg" alt="Samiksha P. Patil">
+            <h2>Personal</h2>
+            <div class="personal-info">
+                <p><strong>Name:</strong> Samiksha Pravin Patil</p>
+                <p><strong>Address:</strong> At. Masli post. Bhishnoor Th. katol dist. Nagpur</p>
+                <p><strong>Contact Number:</strong> 9322011562</p>
+                <p><strong>Email:</strong> kpriya2415@gmail.com</p>
+                <p><strong>Date of Birth:</strong> 15-12-2004</p>
+                <p><strong>Gender:</strong> Female</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/samiksha-p-42ab69243">LinkedIn Profile</a></p>
+                <p><strong>Skype ID:</strong> <a href="https://join.skype.com/invite/vtYkFD0vVf63">Skype Profile</a></p>
+                <p><strong>GitHub ID:</strong> <a href="https://samikshapatil04.github.io/Resume/">GitHub Profile</a></p>
+            </div>
+        </div>
+        <!-- right sec -->
+        <div class="right-column">
+            <h1>Samiksha P. Patil</h1>
+            <p><strong>Full Stack Developer</strong></p>
+            <h2>Objective</h2>
+            <p>A strong believer in strength to attain a sound position of responsibility in a dynamic organization where I can enhance my skills and knowledge for contributing towards the growth of the organization to achieve its terminal goal and the aesthetics as well as functionality rooted contextual and cultural aspects of the organization.</p>
+            <h2>Educational Qualification</h2>
+                <p><strong>Bachelor of Technology</strong> - S. B. Jain Institute of Technology, Management and Research, Nagpur<br>B-Tech (Electronics and Telecommunication) | 8.25 CGPA (Till 4th sem)</p>
+                <p><strong>HSC (PCM)</strong> - B. R. Junior College Katol, Katol<br>Percentage: 70%</p>
+                <p><strong>SSC</strong> - B. R. Convent Katol, Katol<br>Percentage: 84.80%</p>
+            <h2>Skills</h2>
+            <ul>
+                <p><strong>Web Development:</strong> HTML, CSS, Bootstrap, JavaScript, Web Design</p>
+                <p><strong>Languages Known:</strong> C, C++, Python, JavaScript</p>
+                <p><strong>Tool Use for Development:</strong> GitHub</p>
+                <p><strong>IDE:</strong> Visual Studio Code</p>
+                <p><strong>Helper's Known:</strong> Colour Hunt, Google Font</p>
+                <p><strong>Volunteer Experience:</strong> NSS Candidate, IETE Member, Leadership Qualities</p>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
