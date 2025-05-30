@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samiksha Patil - Full Stack Developer</title>
+    <link rel="icon" type="image/x-icon" href="../IMAGES/logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS_FILES/testing-homepage.css">
+</head>
+
+<body>
+    <header>
+        <h1>Samiksha Patil</h1>
+        <p class="subtitle">Full Stack Developer</p>
+        <div class="icon-container">
+            <a href="/index.html" title="Home"><i class='bx bxs-home icon-container icon'></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Manual Testing</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search assignments...">
+                <button class="search-button" onclick="searchAssignments()">Search</button>
+            </div>
+
+            <div class="assignments">
+                <div class="assignment">
+                    <div class="icon-box"><i class='bx bx-log-in-circle'></i></div>
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Login Page</h3>
+                        <a href="https://docs.google.com/spreadsheets/d/1eBpNO8S0JUR8GqDKgM6K-9wAFVwA6iH3XWZne194uTE/edit?gid=0#gid=0" class="view-button">View</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="icon-box"><i class='bx bx-user-circle'></i></div>
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Portfolio Page</h3>
+                        <a href="https://docs.google.com/spreadsheets/d/120cpyRhi_bRnLBFvSsPtwo3FllvoXvyPwHej55GYdFM/edit?gid=0#gid=0" class="view-button">View</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="icon-box"><i class='bx bx-spreadsheet'></i></div>
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">QA Workshop </h3>
+                        <a href="https://docs.google.com/spreadsheets/d/1oONrTilHHpXQKaB9MzYExBhgwMBXve5qtChcd50uEQw/edit?gid=0#gid=0" class="view-button">View</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script>
+        function searchAssignments() {
+            const searchInput = document.getElementById('searchInput');
+            const filter = searchInput.value.toLowerCase();
+            const assignments = document.querySelectorAll('.assignment');
+
+            assignments.forEach(assignment => {
+                const title = assignment.querySelector('.assignment-title').textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    assignment.classList.remove('hidden');
+                } else {
+                    assignment.classList.add('hidden');
+                }
+            });
+        }
+
+        // Add event listener for real-time search
+        document.getElementById('searchInput').addEventListener('input', searchAssignments);
+    </script>
+</body>
+
+</html>
