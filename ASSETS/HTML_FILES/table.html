@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+        <style>
+            body {
+                background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #f6d365 100%);
+                background-attachment: fixed;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+            }
+            table {
+                border-collapse: collapse;
+                border: 6px solid #333;
+                width: 800px;
+                margin: 20px auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+            caption {
+                margin-bottom: 10px;
+            }
+            th, td {
+                border: 2px solid #333;
+                padding: 12px;
+                text-align: center;
+            }
+            th {
+                background-color: rgba(152, 251, 152, 0.7);
+                font-size: 16px;
+            }
+            td {
+                background-color: rgba(255, 228, 196, 0.7);
+            }
+            .result {
+                color: darkgreen;
+                font-weight: bold;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Table</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">STUDENT NAME</th>
+                    <th rowspan="2">ROLL NO.</th>
+                    <th colspan="3">MARKS</th>
+                </tr>
+                <tr>
+                    <th>HISTORY</th>
+                    <th>CIVICS</th>
+                    <th>GEOGRAPHY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>KHUSHI</td>
+                    <td>26</td>
+                    <td>567</td>
+                    <td>367</td>
+                    <td>417</td>
+                </tr>
+                <tr>
+                    <td>NIDHI</td>
+                    <td>36</td>
+                    <td>667</td>
+                    <td>521</td>
+                    <td>438</td>
+                </tr>
+                <tr>
+                    <td>RIYA</td>
+                    <td>41</td>
+                    <td>721</td>
+                    <td>576</td>
+                    <td>601</td>
+                </tr>
+                <tr>
+                    <td colspan="2">RESULT</td>
+                    <td class="result">Pass</td>
+                    <td class="result">Pass</td>
+                    <td class="result">Pass</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SEARCH</title>
+    <style>
+        /* background image styling */
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url(https://img.freepik.com/premium-photo/3d-abstract-background_493604-1338.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* main box */
+        .main-container {
+            width: 50vw;
+            height: 70vh;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.421);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(16, 4, 237, 0.751);
+            padding: 20px;
+            position: relative;
+
+        }
+
+        /* search box */
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        /* search button */
+        .search-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .search-button:hover {
+            background-color: #056c91;
+        }
+
+        /* display box */
+        #display {
+            width: 97.9%;
+            height: 26%;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+
+        #logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+    <!-- Javascript code for search students name  -->
+    <script>
+        function studentName() {
+            let students = ["khushi", "samiksha", "achal", "ketki", "himanshu", "divyanshu", "ayush", "piyush", "riya"];
+            let input = document.getElementById("number-one").value.toLowerCase();
+            let result = false;
+            for (let i = 0; i < students.length; i++) {
+                if (students[i] == input) {
+                    result = true;
+                    break;
+                }
+            }
+
+            if (result) {
+                console.log("Student Found is ", input)
+                document.getElementById("display").innerHTML = "Student Found: " + input;
+            } else {
+                console.log("student not found")
+                document.getElementById("display").innerHTML = "Student Not Found !";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- logo styling -->
+        <div id="logo">
+            <img src="../IMAGES/enjoy.png" width="200px" height="200px" style="
+                    position: absolute;
+                    top: -65px;
+                    right:160px;margin-top: 30px; color:black">
+        </div>
+        <!-- name styling -->
+        <h1 style="text-align: left; color:#171616;font-size: 50px; margin-top:80px;margin-left: 150px ;">ENJOY
+            <br>PROGRAMMING
+        </h1>
+        <!-- search box and button styling -->
+        <div class="search-container">
+            <input type="text" id="number-one" class="search-input" placeholder="Search name here...">
+            <button class="search-button" onclick="studentName()">Search</button>
+        </div>
+        <div id="display">...</div>
+    </div>
+</body>
+
+</html>

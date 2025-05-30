@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login-S B Jain</title>
+    <link rel="icon" type="image/x"
+        href="https://e7.pngegg.com/pngimages/203/692/png-clipart-login-computer-icons-login-s-blue-text-thumbnail.png">
+
+    <!--styling section-->
+    <style>
+        /* navbar styling */
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: darkseagreen;
+        }
+
+        .text-style {
+            font-size: 20px;
+            color: black;
+        }
+
+        .input-field {
+            width: 200px;
+            height: 25px;
+            font-size: 17px;
+            background-color: lightcyan;
+        }
+
+        .checkbox {
+            width: 25px;
+            height: 25px;
+        }
+
+        .radio {
+            width: 20px;
+            height: 20px;
+        }
+
+        .batch-select {
+            color: blueviolet;
+        }
+
+        .dropdown {
+            background-color: khaki;
+            font-size: 17px;
+        }
+
+        .button {
+            background-color: rgb(37, 204, 37);
+            font-size: 22px;
+            width: 150px;
+            height: 38px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .button:hover{
+            box-shadow: 0 0 17px rgba(14, 130, 5, 0.829);
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="registrationForm" style="background-color: darkseagreen;">
+        <!--section one-->
+        <h1 style="text-align: center; color: yellow;">S. B. JAIN INSTITUTE OF TECHNOLOGY MANAGEMENT AND RESEARCH</h1>
+        <h2 style="text-align: center; color: brown;">REGISTRATION FORM</h2>
+        <fieldset style="background-color: #DCFFB7;">
+            <legend>SIGN UP FORM</legend></br>
+            <label class="text-style">Student's Name</label>
+            <input class="input-field" type="text" id="studentFirstName" placeholder="First Name" required />
+            <input class="input-field" type="text" id="studentLastName" placeholder="Last Name" required /></br></br>
+            <label class="text-style">Father Name</label>
+            <input class="input-field" type="text" id="fatherFirstName" placeholder="First Name" />
+            <input class="input-field" type="text" id="fatherLastName" placeholder="Last Name" /></br></br>
+            <label class="text-style">Mother Name</label>
+            <input class="input-field" type="text" id="motherFirstName" placeholder="First Name" />
+            <input class="input-field" type="text" id="motherLastName" placeholder="Last Name" /></br></br>
+            <label class="text-style">Address</label>
+            <input class="input-field" type="text" id="address" /></br></br>
+
+            <!--radio button-->
+            <h2>Gender</h2>
+            <input class="radio" type="radio" name="Sex" value="Male" required />
+            <label class="text-style">Male</label>
+            <input class="radio" type="radio" name="Sex" value="Female" required />
+            <label class="text-style">Female</label></br></br>
+
+            <!--section two-->
+            <label class="text-style">State</label>
+            <input class="input-field" type="text" id="state" required />
+            <label class="text-style">District</label>
+            <input class="input-field" type="text" id="district" required /></br></br>
+            <label class="text-style">City</label>
+            <input class="input-field" type="text" id="city" required />
+            <label class="text-style">Pin Code</label>
+            <input class="input-field" type="number" id="pinCode" required /></br></br>
+
+            <!--dropdown section-->
+            <label for="batch-select" class="text-style">Engineering Courses</label>
+            <select id="batch-select" class="dropdown" required>
+                <option value="" disabled selected>Select your course</option>
+                <option>Computer Science and Engineering</option>
+                <option>Artificial Intelligence and Data Science</option>
+                <option>Artificial Intelligence and Machine Learning</option>
+                <option>Electronics and Telecommunication</option>
+                <option>Electrical Engineering</option>
+                <option>Mechanical Engineering</option>
+            </select></br></br>
+
+            <!--section three-->
+            <label class="text-style">Email Id</label>
+            <input class="input-field" type="email" id="email" required /></br></br>
+            <label class="text-style">Date of Birth</label>
+            <input class="input-field" type="date" id="dob" required /></br></br>
+            <label class="text-style">Contact No.</label>
+            <input class="input-field" type="number" id="contactNo" required /></br></br>
+        </fieldset>
+        <button class="button">SUBMIT</button>
+    </form>
+
+</body>
+
+</html>

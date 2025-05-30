@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../CSS_FILES/calculator.css">
+    <link rel="stylesheet" href="../JS_FILES/calculator.js">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div id="display"></div>
+        <div class="button-container">
+            <button class="button button-color" onclick="numberType(0)">00</button>
+            <button class="button button-color" onclick="per()">%</button>
+            <button class="button button-special" onclick="backspace()">DEL</button>
+            <button class="button button-special" onclick="clearFunction()">AC</button>
+
+            <button class="button" onclick="numberType(7)">7</button>
+            <button class="button" onclick="numberType(8)">8</button>
+            <button class="button" onclick="numberType(9)">9</button>
+            <button class="button button-color" onclick="divi()">÷</button>
+            <button class="button" onclick="numberType(4)">4</button>
+            <button class="button" onclick="numberType(5)">5</button>
+            <button class="button" onclick="numberType(6)">6</button>
+            <button class="button button-color" onclick="mul()">×</button>
+            <button class="button" onclick="numberType(1)">1</button>
+            <button class="button" onclick="numberType(2)">2</button>
+            <button class="button" onclick="numberType(3)">3</button>
+            <button class="button button-color" onclick="minus()">-</button>
+            <button class="button button-dot">.</button>
+            <button class="button" onclick="numberType(0)">0</button>
+            <button class="button button-equal" onclick="showresult()">=</button>
+            <button class="button button-color" onclick="add()">+</button>
+        </div>
+    </div>
+</body>
+</html>

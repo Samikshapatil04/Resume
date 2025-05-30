@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even-Odd Finder</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../CSS_FILES/even.css">
+    <script>
+        function evenOdd() {
+            let number = document.getElementById("number-one").value;
+            if (number % 2 === 0) {
+                document.getElementById("display").innerHTML = "Number is Even";
+                console.log(number + " is an Even Number");
+            } else {
+                document.getElementById("display").innerHTML = "Number is Odd";
+                console.log(number + " is an Odd Number");
+            }
+        }
+
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "";
+            document.getElementById("number-one").value = "";
+        }
+    </script>
+</head>
+<body style="background-image: url(https://st3.depositphotos.com/21038662/35090/i/450/depositphotos_350902770-stock-illustration-black-white-art-design-texture.jpg);">
+    <div class="main-container">
+        <div id="display"></div>
+        <div class="bottom-container">
+            <input id="number-one" type="number" class="container" placeholder="Enter a number">
+            <button class="button" onclick="evenOdd()">SUBMIT</button>
+            <button class="button" onclick="clearFunction()">AC</button>
+        </div>
+    </div>
+</body>
+</html>

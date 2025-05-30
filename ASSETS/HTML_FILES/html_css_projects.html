@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samiksha Patil - Full Stack Developer</title>
+    <link rel="icon" type="image/x-icon" href="../IMAGES/logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS_FILES/html-css-homepage.css">
+</head>
+
+<body>
+    <header>
+        <h1>Samiksha Patil</h1>
+        <p class="subtitle">Full Stack Developer</p>
+        <div class="icon-container">
+            <a href="/index.html" title="Home"><i class='bx bxs-home icon-container icon'></i></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>HTML-CSS Assignments</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search assignments...">
+                <button class="search-button" onclick="searchAssignments()">Search</button>
+            </div>
+            <div class="assignments">
+                    <div class="assignment">
+                        <img src="../IMAGES/resume.avif" alt="Resume">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Resume</h3>
+                            <a href="resume.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/regist_form.png" alt="Registration Form">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Registration Form</h3>
+                            <a href="sign_up.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/table.jpg" alt="Table">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Table</h3>
+                            <a href="table.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/youtube.png" alt="YouTube Page">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">YouTube Page</h3>
+                            <a href="youtube_page.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/flag.avif" alt="Indian Flag">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Indian Flag</h3>
+                            <a href="flag.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/fighters.jpg" alt="India's Great Leaders">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">India's Great Leaders</h3>
+                            <a href="inline_block.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/flex.png" alt="Using Flex Boxes">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Using Flex Boxes</h3>
+                            <a href="prac_flex.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <img src="../IMAGES/chess.webp" alt="Chess Board">
+                        <div class="assignment-content">
+                            <h3 class="assignment-title">Chess Board</h3>
+                            <a href="chess.html" class="view-button">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script>
+        function searchAssignments() {
+            const searchInput = document.getElementById('searchInput');
+            const filter = searchInput.value.toLowerCase();
+            const assignments = document.querySelectorAll('.assignment');
+
+            assignments.forEach(assignment => {
+                const title = assignment.querySelector('.assignment-title').textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    assignment.classList.remove('hidden');
+                } else {
+                    assignment.classList.add('hidden');
+                }
+            });
+        }
+
+        // Add event listener for real-time search
+        document.getElementById('searchInput').addEventListener('input', searchAssignments);
+    </script>
+</body>
+
+</html>

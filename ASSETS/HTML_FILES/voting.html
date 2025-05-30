@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Card</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* background image styling */
+        body {
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* main body */
+        .main-container {
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 25px rgb(242, 246, 242);
+        }
+
+        /* top box */
+        #display {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            background-color: #344955;
+            text-align: center;
+        }
+
+        /* bottom box */
+        .bottom-container {
+            width: 100%;
+            padding: 20px;
+            background-color: #7D7C7C;
+        }
+
+        /* input field */
+        .container {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #EFB495;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* button styling */
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: palegreen;
+            border-radius: 14px;
+            border: none;
+            margin-top: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #219F94;
+        }
+
+        /* Media Queries */
+        @media screen and (min-width: 768px) {
+            .main-container {
+                max-width: 500px;
+            }
+
+            #display {
+                font-size: 28px;
+            }
+
+            .button {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .main-container {
+                max-width: 600px;
+            }
+
+            #display {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body style="background-image: url(https://www.mlive.com/resizer/v2/D2CTMUJIERHZ5NKSWEMINPQDRE.JPG?auth=baeaa560e267a5ad5cada186d589f4ec46029f4ebc1085a49fff98a429f64ac8&width=500&quality=90);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display">Enter your age to check eligibility</div>
+        <!-- bottom section -->
+        <div class="bottom-container">
+            <!-- input field -->
+            <input id="number-one" type="number" class="container" placeholder="Enter Your Age">
+            <!-- button section -->
+            <button class="button" onclick="evenOdd()">Check Here</button>
+            <button class="button" onclick="clearFunction()">AC</button>
+        </div>
+    </div>
+
+    <script>
+        function evenOdd() {
+            let age = document.getElementById("number-one").value;
+            if (age >= 18) {
+                document.getElementById("display").innerHTML = "You are Eligible to Vote!";
+                console.log(age + " Eligible to Vote");
+            } else {
+                document.getElementById("display").innerHTML = "You are Not Eligible to Vote!";
+                console.log(age + " Not Eligible to Vote");
+            }
+        }
+
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "Enter your age to check eligibility";
+            document.getElementById("number-one").value = "";
+        }
+    </script>
+</body>
+</html>
+
+<!-- https://images.axios.com/EUOrvUI63rOFxXo_6xurwzwKvTc=/0x0:1920x1080/1920x1080/2024/06/24/1719259648192.jpg -->
+
+<!-- https://accord-myunion.org/assets/components/phpthumbof/cache/2022%20Pay%20Ballot%20Vote%20-%20Header-01.c2be97d33c484d8be81147b91e0c3f5d.jpg -->
