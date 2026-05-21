@@ -355,25 +355,25 @@ header .navbar ul li a:hover {
 }
 
 /* progress sec */
-.progress-container {
+/* .progress-container {
     width: 300px;
     margin: 30px 0;
-}
+} */
 
-.progress-bar {
+/* .progress-bar {
     width: 120%;
     height: 12.5px;
     background-color: #f0f0f0;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
-}
+} */
 
-.progress-fill {
+/* .progress-fill {
     width: 0;
     height: 100%;
     transition: width 2s ease-in-out;
-}
+} */
 
 .progress-labels {
     display: flex;
@@ -382,7 +382,34 @@ header .navbar ul li a:hover {
     font-weight: bold;
 }
 
-#html-fill {
+/* skills section updated (no progress bar) */
+
+.skills-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 3rem 0;
+}
+
+.skill-box{
+    background: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.skill-box:hover{
+    background: #02f506;
+    color: #111;
+    transform: translateY(-5px);
+    box-shadow: 0 0 14px rgb(18, 249, 6);
+}
+
+/* #html-fill {
     background-color:#02f506;
 }
 
@@ -396,7 +423,7 @@ header .navbar ul li a:hover {
 
 #react-fill {
     background-color:#02f506;
-}
+} */
 
 .progress {
     font-size: 3rem;

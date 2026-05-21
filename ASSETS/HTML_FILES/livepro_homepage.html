@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samiksha Patil - Full Stack Developer</title>
+    <link rel="icon" type="image/x-icon" href="../IMAGES/logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS_FILES/live-projects.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Samiksha Patil</h1>
+        <p class="subtitle">Full Stack Developer</p>
+        <div class="icon-container">
+            <a href="../../index.html" title="Home"><i class='bx bxs-home icon'></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <h2>Live Projects</h2>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search projects...">
+                <button class="search-button" onclick="searchAssignments()">Search</button>
+            </div>
+
+            <div class="assignments">
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Beauty Parlour Website</h3>
+                        <a href="https://samikshapatil04.github.io/Aarohi-Beauty-Parlour/" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">OpsMind AI</h3>
+                        <a href="https://github.com/Samikshapatil04/OpsMind-AI" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">AdVantage Gen AI</h3>
+                        <a href="https://github.com/Samikshapatil04/AdVantage-Gen" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Luxe Fashion Store</h3>
+                        <a href="https://luxe-store-nine-virid.vercel.app/" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Insurance Policy Management Platform</h3>
+                        <a href="https://github.com/Samikshapatil04/nicsan-crm" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+                <div class="assignment">
+                    <div class="assignment-content">
+                        <h3 class="assignment-title">Sere Innovations</h3>
+                        <a href="https://sere-innovations-five.vercel.app/" class="view-button">View Project</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function searchAssignments() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.assignment');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.assignment-title').textContent.toLowerCase();
+                card.style.display = title.includes(input) ? "flex" : "none";
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchAssignments);
+    </script>
+
+</body>
+
+</html>
